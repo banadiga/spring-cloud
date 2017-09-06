@@ -28,6 +28,11 @@
 
   <dependencies>
     <dependency>
+      <groupId>com.lohika.jclub.zipkin</groupId>
+      <artifactId>zipkin-server-client</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
       <groupId>com.lohika.jclub.dsl</groupId>
       <artifactId>dsl-core</artifactId>
       <version>0.0.1-SNAPSHOT</version>

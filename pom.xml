@@ -26,5 +26,7 @@
 		<module>client-service</module>
 		<module>api-gateway-service</module>
     <module>integration-test</module>
-  </modules>
+		<module>zipkin-server</module>
+		<module>zipkin-server-client</module>
+	</modules>
 </project>
