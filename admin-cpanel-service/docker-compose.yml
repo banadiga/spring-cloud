@@ -1,0 +1,32 @@
+version: "2"
+services:
+#
+  discovery-server:
+    image: discovery-server
+    ports:
+      - "8761:8761"
+#
+  storage-service:
+    image: storage-service
+    ports:
+      - "8091:8091"
+    links:
+      - discovery-server
+    depends_on:
+      - discovery-server
+#
+  admin-cpanel-service:
+    image: admin-cpanel-service
+    ports:
+      - "8490:8490"
+    links:
+      - discovery-server
+      - storage-service
+    depends_on:
+      - discovery-server
+      - storage-service
+
+#
+networks:
+  default:
+    driver: bridge
