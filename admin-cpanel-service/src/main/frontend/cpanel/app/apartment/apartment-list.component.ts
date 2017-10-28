@@ -21,8 +21,8 @@ export class ApartmentListComponent implements OnInit {
     this.newApartment = new Apartment();
   }
 
-  removeApartment(todo: Apartment) {
-    this.apartmentService.deleteApartmentById(todo.id);
+  removeApartment(apartment: Apartment) {
+    this.apartmentService.deleteApartmentById(apartment.id);
   }
 
   get apartments() {

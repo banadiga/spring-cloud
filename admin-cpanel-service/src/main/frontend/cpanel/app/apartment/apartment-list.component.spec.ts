@@ -35,7 +35,7 @@ describe('ApartmentListComponent', () => {
     expect(app.title).toEqual('Administrator CPanel | Apartment');
   }));
 
-  it(`should have a newApartment todo`, async(() => {
+  it(`should have a newApartment`, async(() => {
     let fixture = TestBed.createComponent(ApartmentListComponent);
     let app = fixture.debugElement.componentInstance;
     expect(app.newApartment instanceof Apartment).toBeTruthy()
