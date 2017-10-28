@@ -1,4 +1,4 @@
-import { AppPage } from './app.po';
+import {AppPage} from './app.po';
 
 describe('frontend App', () => {
   let page: AppPage;
@@ -7,7 +7,7 @@ describe('frontend App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  xit('should display welcome message', () => {
     page.navigateTo();
     expect(page.getParagraphText()).toEqual('Welcome to CPanel!');
   });

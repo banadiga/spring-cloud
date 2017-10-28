@@ -1,27 +1,27 @@
 import {inject, TestBed} from '@angular/core/testing';
 
-import {ApartmentDataService} from './apartment-data.service';
+import {ApartmentService} from './apartment.service';
 import {Apartment} from "./apartment";
 
-describe('ApartmentDataService', () => {
+describe('ApartmentService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ApartmentDataService]
+      providers: [ApartmentService]
     });
   });
 
-  it('should ...', inject([ApartmentDataService], (service: ApartmentDataService) => {
+  it('should ...', inject([ApartmentService], (service: ApartmentService) => {
     expect(service).toBeTruthy();
   }));
 
   describe('#getAllApartments()', () => {
 
-    it('should return an empty array by default', inject([ApartmentDataService], (service: ApartmentDataService) => {
+    it('should return an empty array by default', inject([ApartmentService], (service: ApartmentService) => {
       expect(service.getAllApartments()).toEqual([]);
     }));
 
-    it('should return all apartments', inject([ApartmentDataService], (service: ApartmentDataService) => {
+    it('should return all apartments', inject([ApartmentService], (service: ApartmentService) => {
       let apartment1 = new Apartment({location: 'location 1'});
       let apartment2 = new Apartment({location: 'location 2'});
       service.addApartment(apartment1);
@@ -33,7 +33,7 @@ describe('ApartmentDataService', () => {
 
   describe('#save(apartment)', () => {
 
-    it('should automatically assign an incrementing id', inject([ApartmentDataService], (service: ApartmentDataService) => {
+    it('should automatically assign an incrementing id', inject([ApartmentService], (service: ApartmentService) => {
       let apartment1 = new Apartment({location: 'location 1'});
       let apartment2 = new Apartment({location: 'location 2'});
       service.addApartment(apartment1);
@@ -46,7 +46,7 @@ describe('ApartmentDataService', () => {
 
   describe('#deleteApartmentById(id)', () => {
 
-    it('should remove apartment with the corresponding id', inject([ApartmentDataService], (service: ApartmentDataService) => {
+    it('should remove apartment with the corresponding id', inject([ApartmentService], (service: ApartmentService) => {
       let apartment1 = new Apartment({location: 'location 1'});
       let apartment2 = new Apartment({location: 'location 2'});
       service.addApartment(apartment1);
@@ -58,7 +58,7 @@ describe('ApartmentDataService', () => {
       expect(service.getAllApartments()).toEqual([]);
     }));
 
-    it('should not removing anything if apartment with corresponding id is not found', inject([ApartmentDataService], (service: ApartmentDataService) => {
+    it('should not removing anything if apartment with corresponding id is not found', inject([ApartmentService], (service: ApartmentService) => {
       let apartment1 = new Apartment({location: 'location 1'});
       let apartment2 = new Apartment({location: 'location 2'});
       service.addApartment(apartment1);
@@ -72,7 +72,7 @@ describe('ApartmentDataService', () => {
 
   describe('#updateApartmentById(id, values)', () => {
 
-    it('should return apartment with the corresponding id and updated data', inject([ApartmentDataService], (service: ApartmentDataService) => {
+    it('should return apartment with the corresponding id and updated data', inject([ApartmentService], (service: ApartmentService) => {
       let apartment = new Apartment({location: 'location 1'});
       service.addApartment(apartment);
       let updatedApartment = service.updateApartmentById(1, {
@@ -81,7 +81,7 @@ describe('ApartmentDataService', () => {
       expect(updatedApartment.location).toEqual('new location');
     }));
 
-    it('should return null if apartment is not found', inject([ApartmentDataService], (service: ApartmentDataService) => {
+    it('should return null if apartment is not found', inject([ApartmentService], (service: ApartmentService) => {
       let apartment = new Apartment({location: 'location 1'});
       service.addApartment(apartment);
       let updatedApartment = service.updateApartmentById(2, {

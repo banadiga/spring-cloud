@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Apartment} from "./apartment";
 
 @Injectable()
-export class ApartmentDataService {
+export class ApartmentService {
 
   // Placeholder for last id so we can simulate
   // automatic incrementing of id's
@@ -15,7 +15,7 @@ export class ApartmentDataService {
   }
 
   // Simulate POST /api/apartments
-  addApartment(apartment: Apartment): ApartmentDataService {
+  addApartment(apartment: Apartment): ApartmentService {
     if (!apartment.id) {
       apartment.id = ++this.lastId;
     }
@@ -24,7 +24,7 @@ export class ApartmentDataService {
   }
 
   // Simulate DELETE /api/apartments/:id
-  deleteApartmentById(id: number): ApartmentDataService {
+  deleteApartmentById(id: number): ApartmentService {
     this.apartments = this.apartments
       .filter(apartment => apartment.id !== id);
     return this;
