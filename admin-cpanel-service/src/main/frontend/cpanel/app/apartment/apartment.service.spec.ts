@@ -1,7 +1,7 @@
 import {inject, TestBed} from '@angular/core/testing';
 
 import {ApartmentService} from './apartment.service';
-import {Apartment} from "./apartment";
+import {Apartment} from './apartment';
 
 describe('ApartmentService', () => {
 

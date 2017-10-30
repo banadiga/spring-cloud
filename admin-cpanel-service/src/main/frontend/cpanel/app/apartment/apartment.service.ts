@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Apartment} from "./apartment";
+import {Apartment} from './apartment';
 
 @Injectable()
 export class ApartmentService {

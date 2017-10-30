@@ -1,25 +1,25 @@
-<section class="apartmentapp">
+<section class='apartmentapp'>
 
-  <header class="header">
+  <header class='header'>
     <h1>{{title}}</h1>
-    <input class="new-apartment" placeholder="Apartments location" autofocus=""
-           [(ngModel)]="newApartment.location"
-           (keyup.enter)="addApartment()">
+    <input class='new-apartment' placeholder='Apartments location' autofocus=''
+           [(ngModel)]='newApartment.location'
+           (keyup.enter)='addApartment()'>
   </header>
 
-  <section class="main" *ngIf="apartments.length > 0">
-    <ul class="apartment-list">
-      <li *ngFor="let apartment of apartments">
-        <div class="view">
+  <section class='main' *ngIf='apartments.length > 0'>
+    <ul class='apartment-list'>
+      <li *ngFor='let apartment of apartments'>
+        <div class='view'>
           <label>{{apartment.location}}</label>
-          <button class="destroy" (click)="removeApartment(apartment)"></button>
+          <button class='destroy' (click)='removeApartment(apartment)'></button>
         </div>
       </li>
     </ul>
   </section>
 
-  <footer class="footer" *ngIf="apartments.length > 0">
-    <span class="apartment-count"><strong>{{apartments.length}}</strong>
+  <footer class='footer' *ngIf='apartments.length > 0'>
+    <span class='apartment-count'><strong>{{apartments.length}}</strong>
       {{apartments.length == 1 ? 'item' : 'items'}} left</span>
   </footer>
 

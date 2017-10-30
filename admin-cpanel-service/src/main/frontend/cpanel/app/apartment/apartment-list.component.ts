@@ -1,19 +1,22 @@
 import {Component, OnInit} from '@angular/core';
-import {ApartmentService} from "./apartment.service";
-import {Apartment} from "./apartment";
+import {ApartmentService} from './apartment.service';
+import {Apartment} from './apartment';
 
 @Component({
   selector: 'app-apartment',
   templateUrl: './apartment-list.component.html',
-  styleUrls: ['./apartment-list.component.css'],
-  providers: [ApartmentService]
+  styleUrls: ['./apartment-list.component.css']
 })
 export class ApartmentListComponent implements OnInit {
-  title = 'Administrator CPanel | Apartment';
+  title = 'CPanel | Apartment';
 
   newApartment: Apartment = new Apartment();
 
   constructor(private apartmentService: ApartmentService) {
+  }
+
+  get apartments() {
+    return this.apartmentService.getAllApartments();
   }
 
   addApartment() {
@@ -23,10 +26,6 @@ export class ApartmentListComponent implements OnInit {
 
   removeApartment(apartment: Apartment) {
     this.apartmentService.deleteApartmentById(apartment.id);
-  }
-
-  get apartments() {
-    return this.apartmentService.getAllApartments();
   }
 
   ngOnInit() {

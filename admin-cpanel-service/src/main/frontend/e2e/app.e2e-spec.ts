@@ -9,6 +9,6 @@ describe('frontend App', () => {
 
   xit('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to CPanel!');
+    expect(page.getParagraphText()).toEqual('CPanel');
   });
 });
