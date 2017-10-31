@@ -1,4 +1,4 @@
-import {DashboardPage} from "./dashboard.page";
+import {DashboardPage} from './dashboard.page';
 
 describe('Dashboard', () => {
   let page: DashboardPage;
