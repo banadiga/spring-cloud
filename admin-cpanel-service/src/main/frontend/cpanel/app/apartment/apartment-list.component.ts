@@ -8,7 +8,7 @@ import {Apartment} from './apartment';
   styleUrls: ['./apartment-list.component.css']
 })
 export class ApartmentListComponent implements OnInit {
-  title = 'CPanel | Apartment';
+  title = 'CPanel | Apartments';
 
   newApartment: Apartment = new Apartment();
 

@@ -2,10 +2,10 @@ import {browser, by, element} from 'protractor';
 
 export class ApartmentListPage {
   navigateTo() {
-    return browser.get('/');
+    return browser.get('/apartments');
   }
 
   getParagraphText() {
-    return element(by.css('app-apartment h1')).getText();
+    return element(by.css('app-root app-apartment h2')).getText();
   }
 }

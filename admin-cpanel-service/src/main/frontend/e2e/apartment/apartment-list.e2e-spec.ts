@@ -1,4 +1,4 @@
-import {ApartmentListPage} from './apartment-list-page';
+import {ApartmentListPage} from './apartment-list.page';
 
 describe('Apartment list', () => {
   let page: ApartmentListPage;
@@ -7,8 +7,8 @@ describe('Apartment list', () => {
     page = new ApartmentListPage();
   });
 
-  xit('should display welcome message', () => {
+  it('should display apartments message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('CPanel | Apartment');
+    expect(page.getParagraphText()).toEqual('CPanel | Apartments');
   });
 });

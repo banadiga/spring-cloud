@@ -1,4 +1,4 @@
-import {AppPage} from './app.po';
+import {AppPage} from './app.page';
 
 describe('frontend App', () => {
   let page: AppPage;
@@ -7,8 +7,18 @@ describe('frontend App', () => {
     page = new AppPage();
   });
 
-  xit('should display welcome message', () => {
+  it('should display welcome message', () => {
     page.navigateTo();
     expect(page.getParagraphText()).toEqual('CPanel');
+  });
+
+  it('should display menu Dashboard', () => {
+    page.navigateTo();
+    expect(page.getNavDashboard()).toEqual('Dashboard');
+  });
+
+  it('should display menu Apartments', () => {
+    page.navigateTo();
+    expect(page.getNavApartments()).toEqual('Show apartments');
   });
 });

@@ -40,8 +40,8 @@ describe('ApartmentListComponent', () => {
     expect(component).toBeTruthy();
   }));
 
-  it(`should have as title 'CPanel | Apartment'`, async(() => {
-    expect(component.title).toEqual('CPanel | Apartment');
+  it(`should have as title 'CPanel | Apartments'`, async(() => {
+    expect(component.title).toEqual('CPanel | Apartments');
   }));
 
   it(`should have a 'newApartment' action`, async(() => {
