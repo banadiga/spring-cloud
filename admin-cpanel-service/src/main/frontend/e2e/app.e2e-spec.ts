@@ -5,20 +5,18 @@ describe('frontend App', () => {
 
   beforeEach(() => {
     page = new AppPage();
+    page.navigateTo();
   });
 
   it('should display welcome message', () => {
-    page.navigateTo();
     expect(page.getParagraphText()).toEqual('CPanel');
   });
 
   it('should display menu Dashboard', () => {
-    page.navigateTo();
     expect(page.getNavDashboard()).toEqual('Dashboard');
   });
 
   it('should display menu Apartments', () => {
-    page.navigateTo();
     expect(page.getNavApartments()).toEqual('Show apartments');
   });
 });

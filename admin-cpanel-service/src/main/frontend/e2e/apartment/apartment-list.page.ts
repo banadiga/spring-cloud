@@ -6,6 +6,14 @@ export class ApartmentListPage {
   }
 
   getParagraphText() {
-    return element(by.css('app-root app-apartment h2')).getText();
+    return element(by.css('app-apartments h2')).getText();
+  }
+
+  getNewApartment() {
+    return element(by.css('app-apartments a#new-apartment')).getText();
+  }
+
+  gotoNewApartment() {
+    return element(by.css('app-apartments a#new-apartment')).click();
   }
 }

@@ -1,32 +1,32 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-
-import {ApartmentListComponent} from './apartment-list.component';
 import {RouterTestingModule} from '@angular/router/testing';
-import {FormsModule} from '@angular/forms';
+import {FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ApartmentServiceStub} from '../../stub/apartment-service.stub';
 import {ApartmentService} from './apartment.service';
+import {ApartmentNewComponent} from "./apartment-new.component";
 
-describe('ApartmentListComponent', () => {
-  let component: ApartmentListComponent;
-  let fixture: ComponentFixture<ApartmentListComponent>;
+describe('ApartmentNewComponent', () => {
+  let component: ApartmentNewComponent;
+  let fixture: ComponentFixture<ApartmentNewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         FormsModule,
+        ReactiveFormsModule,
         RouterTestingModule
       ],
       providers: [
         {provide: ApartmentService, useClass: ApartmentServiceStub}
       ],
       declarations: [
-        ApartmentListComponent
+        ApartmentNewComponent
       ]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ApartmentListComponent);
+    fixture = TestBed.createComponent(ApartmentNewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -39,8 +39,11 @@ describe('ApartmentListComponent', () => {
     expect(component).toBeTruthy();
   }));
 
-  it(`should have as title 'CPanel | Apartments'`, async(() => {
-    expect(component.title).toEqual('CPanel | Apartments');
+  it(`should have as title 'CPanel | New apartment'`, async(() => {
+    expect(component.title).toEqual('CPanel | New apartment');
   }));
 
+  it(`should have a 'apartment' form`, async(() => {
+    expect(component.apartment instanceof FormGroup).toBeTruthy()
+  }));
 });

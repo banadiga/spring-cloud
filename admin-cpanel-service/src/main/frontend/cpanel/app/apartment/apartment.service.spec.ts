@@ -31,6 +31,15 @@ describe('ApartmentService', () => {
 
   });
 
+  describe('#getApartment()', () => {
+
+    it('should return an null by default', inject([ApartmentService], (service: ApartmentService) => {
+      expect(service.getApartmentById(1)).toEqual(null);
+    }));
+
+  });
+
+
   describe('#save(apartment)', () => {
 
     it('should automatically assign an incrementing id', inject([ApartmentService], (service: ApartmentService) => {
@@ -75,18 +84,20 @@ describe('ApartmentService', () => {
     it('should return apartment with the corresponding id and updated data', inject([ApartmentService], (service: ApartmentService) => {
       let apartment = new Apartment({location: 'location 1'});
       service.addApartment(apartment);
-      let updatedApartment = service.updateApartmentById(1, {
+      service.updateApartmentById(1, {
         location: 'new location'
       });
+      let updatedApartment = service.getApartmentById(1);
       expect(updatedApartment.location).toEqual('new location');
     }));
 
-    it('should return null if apartment is not found', inject([ApartmentService], (service: ApartmentService) => {
+    it('should not create if apartment is not found', inject([ApartmentService], (service: ApartmentService) => {
       let apartment = new Apartment({location: 'location 1'});
       service.addApartment(apartment);
-      let updatedApartment = service.updateApartmentById(2, {
+      service.updateApartmentById(2, {
         location: 'new location'
       });
+      let updatedApartment = service.getApartmentById(2);
       expect(updatedApartment).toEqual(null);
     }));
 

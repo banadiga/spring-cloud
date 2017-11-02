@@ -1,0 +1,79 @@
+<section class='apartment'>
+
+  <header class='header'>
+    <h2>{{title}}</h2>
+  </header>
+
+  <form novalidate (ngSubmit)="onSubmit()" [formGroup]="apartment">
+    <label>
+      <span>Location</span>
+      <input type="text" placeholder="Your full location" formControlName="location">
+    </label>
+    <div class="error" *ngIf="apartment.get('location').hasError('required') && apartment.get('location').touched">
+      Location is required
+    </div>
+    <div class="error" *ngIf="apartment.get('location').hasError('minlength') && apartment.get('location').touched">
+      Minimum of 2 characters
+    </div>
+
+    <label>
+      <span>Sqft</span>
+      <input type="text" placeholder="Your full sqft" formControlName="sqft">
+    </label>
+    <div class="error" *ngIf="apartment.get('sqft').hasError('required') && apartment.get('sqft').touched">
+      Sqft is required
+    </div>
+    <div class="error" *ngIf="apartment.get('sqft').hasError('minlength') && apartment.get('sqft').touched">
+      Minimum of 2 characters
+    </div>
+
+    <label>
+      <span>Price</span>
+      <input type="text" placeholder="Your full price" formControlName="price">
+    </label>
+    <div class="error" *ngIf="apartment.get('price').hasError('required') && apartment.get('price').touched">
+      Price is required
+    </div>
+    <div class="error" *ngIf="apartment.get('price').hasError('minlength') && apartment.get('price').touched">
+      Minimum of 2 characters
+    </div>
+
+    <label>
+      <span>Realtor name</span>
+      <input type="text" placeholder="Your full realtor name" formControlName="realtorName">
+    </label>
+    <div class="error"
+         *ngIf="apartment.get('realtorName').hasError('required') && apartment.get('realtorName').touched">
+      Realtor name is required
+    </div>
+    <div class="error"
+         *ngIf="apartment.get('realtorName').hasError('minlength') && apartment.get('realtorName').touched">
+      Minimum of 2 characters
+    </div>
+
+    <label>
+      <span>Email</span>
+      <input type="text" placeholder="Your full email" type="email" formControlName="mail">
+    </label>
+    <div class="error" *ngIf="apartment.get('mail').hasError('required') && apartment.get('mail').touched">
+      Email is required
+    </div>
+    <div class="error" *ngIf="apartment.get('mail').hasError('minlength') && apartment.get('mail').touched">
+      Minimum of 2 characters
+    </div>
+
+    <label>
+      <span>Phone</span>
+      <input type="text" placeholder="Your full phone" formControlName="phone">
+    </label>
+    <div class="error" *ngIf="apartment.get('phone').hasError('required') && apartment.get('phone').touched">
+      Name is required
+    </div>
+    <div class="error" *ngIf="apartment.get('phone').hasError('minlength') && apartment.get('phone').touched">
+      Minimum of 2 characters
+    </div>
+
+    <button type="submit" [disabled]="apartment.invalid">Sign up</button>
+  </form>
+
+</section>

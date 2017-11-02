@@ -6,14 +6,14 @@ export class AppPage {
   }
 
   getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+    return element(by.css('h1')).getText();
   }
 
   getNavDashboard() {
-    return element(by.css('app-root nav a#dashboard')).getText();
+    return element(by.css('nav a#dashboard')).getText();
   }
 
   getNavApartments() {
-    return element(by.css('app-root nav a#apartments')).getText();
+    return element(by.css('nav a#apartments')).getText();
   }
 }

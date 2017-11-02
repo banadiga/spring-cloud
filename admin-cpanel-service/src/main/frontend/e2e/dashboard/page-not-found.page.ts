@@ -6,14 +6,14 @@ export class PageNotFoundPage {
   }
 
   getParagraphText() {
-    return element(by.css('app-root app-page-not-found h2')).getText();
+    return element(by.css('app-page-not-found h2')).getText();
   }
 
   getBackLink() {
-    return element(by.css('app-root app-page-not-found a')).getText();
+    return element(by.css('app-page-not-found a')).getText();
   }
 
   goBack() {
-    return element(by.css('app-root app-page-not-found a')).click();
+    return element(by.css('app-page-not-found a')).click();
   }
 }
