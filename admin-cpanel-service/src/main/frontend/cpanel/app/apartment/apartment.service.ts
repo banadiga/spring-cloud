@@ -17,20 +17,20 @@ export class ApartmentService {
   // Simulate POST /api/apartments
   addApartment(apartment: Apartment): Apartment {
     if (!apartment.id) {
-      apartment.id = ++this.lastId;
+      apartment.id = (++this.lastId).toFixed();
     }
     this.apartments.push(apartment);
     return apartment;
   }
 
   // Simulate DELETE /api/apartments/:id
-  deleteApartmentById(id: number): void {
+  deleteApartmentById(id: string): void {
     this.apartments = this.apartments
       .filter(apartment => apartment.id !== id);
   }
 
   // Simulate PUT /api/apartments/:id
-  updateApartmentById(id: number, values: Object = {}) {
+  updateApartmentById(id: string, values: Object = {}) {
     let apartment = this.getApartmentById(id);
     if (!apartment) {
       return;
@@ -44,7 +44,7 @@ export class ApartmentService {
   }
 
   // Simulate GET /api/apartments/:id
-  getApartmentById(id: number): Apartment {
+  getApartmentById(id: string): Apartment {
     let item = this.apartments
       .filter(apartment => apartment.id === id)
       .pop();

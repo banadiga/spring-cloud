@@ -1,8 +1,8 @@
 export class Apartment {
-  id: number;
+  id: string;
   location: string;
-  price: number;
-  sqft: number;
+  price: string;
+  sqft: string;
   phone: string;
   realtorName: string;
   mail: string;

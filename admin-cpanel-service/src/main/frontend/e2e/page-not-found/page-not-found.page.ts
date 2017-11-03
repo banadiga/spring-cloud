@@ -1,19 +1,18 @@
 import {browser, by, element} from 'protractor';
+import {BasePage} from '../base.page';
 
-export class PageNotFoundPage {
-  navigateTo() {
+export class PageNotFoundPage extends BasePage {
+  private backLink = element(by.css('app-page-not-found a'));
+
+  navigateToNotExistingPage() {
     return browser.get('/not-existing-page');
   }
 
-  getParagraphText() {
-    return element(by.css('app-page-not-found h2')).getText();
-  }
-
   getBackLink() {
-    return element(by.css('app-page-not-found a')).getText();
+    return this.backLink.getText();
   }
 
   goBack() {
-    return element(by.css('app-page-not-found a')).click();
+    return this.backLink.click();
   }
 }

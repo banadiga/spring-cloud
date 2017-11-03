@@ -1,14 +1,14 @@
 import {DashboardPage} from './dashboard.page';
+import {AppPage} from '../app.page';
 
 describe('Dashboard', () => {
   let page: DashboardPage;
 
-  beforeEach(() => {
-    page = new DashboardPage();
+  beforeAll(() => {
+    page = AppPage.create().clickDashboard();
   });
 
-  it('should display dashboard message', () => {
-    page.navigateTo();
+  it('should display page title', () => {
     expect(page.getParagraphText()).toEqual('CPanel | Dashboard');
   });
 });

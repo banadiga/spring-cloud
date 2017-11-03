@@ -1,15 +1,17 @@
-import {ApartmentNewPage} from "./apartment-new.page";
-import {browser} from "protractor";
+import {ApartmentNewPage} from './apartment-new.page';
+import {browser} from 'protractor';
+import {Apartment} from '../../cpanel/app/apartment/apartment';
+import {AppPage} from '../app.page';
 
 describe('New apartment', () => {
   let page: ApartmentNewPage;
 
-  beforeEach(() => {
-    page = new ApartmentNewPage();
-    page.navigateTo();
+  beforeAll(() => {
+    const apartmentsPage = AppPage.create().clickApartments();
+    page = apartmentsPage.clickNewApartment();
   });
 
-  it('should display apartments message', () => {
+  it('should display page title', () => {
     expect(page.getParagraphText()).toEqual('CPanel | New apartment');
   });
 
@@ -18,13 +20,13 @@ describe('New apartment', () => {
     describe('location', () => {
 
       it('should be required', () => {
-        page.location("");
+        page.setLocation('');
 
         expect(page.getErrorsText()).toContain('Location is required');
       });
 
       it('should be long enough', () => {
-        page.location("l");
+        page.setLocation('l');
 
         expect(page.getErrorsText()).toContain('Minimum of 2 characters');
       });
@@ -33,13 +35,13 @@ describe('New apartment', () => {
     describe('sqft', () => {
 
       it('should be required', () => {
-        page.sqft("");
+        page.setSqft('');
 
         expect(page.getErrorsText()).toContain('Sqft is required');
       });
 
       it('should be long enough', () => {
-        page.sqft("s");
+        page.setSqft('s');
 
         expect(page.getErrorsText()).toContain('Minimum of 2 characters');
       });
@@ -48,13 +50,13 @@ describe('New apartment', () => {
     describe('price', () => {
 
       it('should be required', () => {
-        page.price("");
+        page.setPrice('');
 
         expect(page.getErrorsText()).toContain('Price is required');
       });
 
       it('should be long enough', () => {
-        page.price("p");
+        page.setPrice('p');
 
         expect(page.getErrorsText()).toContain('Minimum of 2 characters');
       });
@@ -63,13 +65,13 @@ describe('New apartment', () => {
     describe('realtorName', () => {
 
       it('should be required', () => {
-        page.realtorName("");
+        page.setRealtorName('');
 
         expect(page.getErrorsText()).toContain('Realtor name is required');
       });
 
       it('should be long enough', () => {
-        page.realtorName("r");
+        page.setRealtorName('r');
 
         expect(page.getErrorsText()).toContain('Minimum of 2 characters');
       });
@@ -78,19 +80,19 @@ describe('New apartment', () => {
     describe('mail', () => {
 
       it('should be required', () => {
-        page.mail("");
+        page.setMail('');
 
         expect(page.getErrorsText()).toContain('Email is required');
       });
 
       it('should be email', () => {
-        page.mail("not-email-at-company.com");
+        page.setMail('not-email-at-company.com');
 
         expect(page.getErrorsText()).toContain('Should be email');
       });
 
       it('should be long enough', () => {
-        page.mail("m");
+        page.setMail('m');
 
         expect(page.getErrorsText()).toContain('Minimum of 2 characters');
       });
@@ -99,19 +101,19 @@ describe('New apartment', () => {
     describe('phone', () => {
 
       it('should be required', () => {
-        page.phone("");
+        page.setPhone('');
 
         expect(page.getErrorsText()).toContain('Phone is required');
       });
 
       xit('should be phone', () => {
-        page.phone("not-phone");
+        page.setPhone('not-phone');
 
         expect(page.getErrorsText()).toContain('Should be phone');
       });
 
       it('should be long enough', () => {
-        page.phone("p");
+        page.setPhone('p');
 
         expect(page.getErrorsText()).toContain('Minimum of 2 characters');
       });
@@ -121,12 +123,12 @@ describe('New apartment', () => {
   describe('on failure validation', () => {
 
     it('should not be able to create apartment', () => {
-      page.location("");
-      page.sqft("");
-      page.price("");
-      page.realtorName("");
-      page.mail("");
-      page.phone("");
+      page.setLocation('');
+      page.setSqft('');
+      page.setPrice('');
+      page.setRealtorName('');
+      page.setMail('');
+      page.setPhone('');
 
       expect(page.isEnableSubmit()).toEqual(false);
     });
@@ -135,26 +137,26 @@ describe('New apartment', () => {
   describe('creation', () => {
 
     it('should be able to create apartment', () => {
-      page.location("location");
-      page.sqft("sqft");
-      page.price("price");
-      page.realtorName("realtorName");
-      page.mail("email@mail.com");
-      page.phone("phone");
+      page.setLocation('location');
+      page.setSqft('sqft');
+      page.setPrice('price');
+      page.setRealtorName('realtorName');
+      page.setMail('email@mail.com');
+      page.setPhone('phone');
 
       expect(page.isEnableSubmit()).toEqual(true);
       expect(page.getErrorsText()).toEqual([]);
     });
 
     it('should create apartment', () => {
-      page.location("location");
-      page.sqft("sqft");
-      page.price("price");
-      page.realtorName("realtorName");
-      page.mail("email@mail.com");
-      page.phone("phone");
-
-      page.submit();
+      page.create(new Apartment({
+        location: 'My location',
+        sqft: 'My sqft',
+        price: 'My price',
+        realtorName: 'My realtor name',
+        mail: 'Email@company.com',
+        phone: 'My phone',
+      }));
 
       expect(browser.getCurrentUrl()).toMatch('/apartments');
     });

@@ -1,11 +1,4 @@
-import {browser, by, element} from 'protractor';
+import {BasePage} from '../base.page';
 
-export class DashboardPage {
-  navigateTo() {
-    return browser.get('/dashboard');
-  }
-
-  getParagraphText() {
-    return element(by.css('app-dashboard h2')).getText();
-  }
+export class DashboardPage extends BasePage {
 }

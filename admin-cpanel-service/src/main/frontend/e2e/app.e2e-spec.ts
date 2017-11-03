@@ -3,12 +3,11 @@ import {AppPage} from './app.page';
 describe('frontend App', () => {
   let page: AppPage;
 
-  beforeEach(() => {
-    page = new AppPage();
-    page.navigateTo();
+  beforeAll(() => {
+    page = AppPage.create();
   });
 
-  it('should display welcome message', () => {
+  it('should display page title', () => {
     expect(page.getParagraphText()).toEqual('CPanel');
   });
 

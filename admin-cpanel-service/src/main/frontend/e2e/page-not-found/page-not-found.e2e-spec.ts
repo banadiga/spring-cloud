@@ -4,12 +4,15 @@ import {browser} from 'protractor';
 describe('PageNotFoundPage', () => {
   let page: PageNotFoundPage;
 
-  beforeEach(() => {
+  beforeAll(() => {
     page = new PageNotFoundPage();
-    page.navigateTo();
   });
 
-  it('should display page not found message', () => {
+  beforeEach(() => {
+    page.navigateToNotExistingPage();
+  });
+
+  it('should display page title', () => {
     expect(page.getParagraphText()).toEqual('Page not found');
   });
 

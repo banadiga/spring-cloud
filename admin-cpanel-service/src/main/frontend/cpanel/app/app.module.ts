@@ -1,14 +1,18 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
-import {AppComponent} from './app.component';
-import {DashboardComponent} from './dashboard/dashboard.component';
-import {ApartmentListComponent} from './apartment/apartment-list.component';
-import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import {ApartmentService} from './apartment/apartment.service';
 import {AppRoutingModule} from './app-routing.module';
-import {ApartmentNewComponent} from "./apartment/apartment-new.component";
+import {AppComponent} from './app.component';
+
+import {ApartmentService} from './apartment/apartment.service';
+
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+
+import {DashboardComponent} from './dashboard/dashboard.component';
+
+import {ApartmentListComponent} from './apartment/apartment-list.component';
+import {ApartmentNewComponent} from './apartment/apartment-new.component';
+import {ApartmentViewComponent} from './apartment/apartment-view.component';
 
 
 @NgModule({
@@ -16,6 +20,7 @@ import {ApartmentNewComponent} from "./apartment/apartment-new.component";
     AppComponent,
     ApartmentListComponent,
     ApartmentNewComponent,
+    ApartmentViewComponent,
     DashboardComponent,
     PageNotFoundComponent
   ],
