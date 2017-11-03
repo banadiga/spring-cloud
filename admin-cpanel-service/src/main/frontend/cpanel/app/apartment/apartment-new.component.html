@@ -53,7 +53,7 @@
 
     <label>
       <span>Email</span>
-      <input type="text" placeholder="Your full email" type="email" formControlName="mail">
+      <input type="email" placeholder="Your full email" formControlName="mail" [email]="true">
     </label>
     <div class="error" *ngIf="apartment.get('mail').hasError('required') && apartment.get('mail').touched">
       Email is required
@@ -61,19 +61,25 @@
     <div class="error" *ngIf="apartment.get('mail').hasError('minlength') && apartment.get('mail').touched">
       Minimum of 2 characters
     </div>
+    <div class="error" *ngIf="apartment.get('mail').hasError('email') && apartment.get('mail').touched">
+      Should be email
+    </div>
 
     <label>
       <span>Phone</span>
       <input type="text" placeholder="Your full phone" formControlName="phone">
     </label>
     <div class="error" *ngIf="apartment.get('phone').hasError('required') && apartment.get('phone').touched">
-      Name is required
+      Phone is required
     </div>
     <div class="error" *ngIf="apartment.get('phone').hasError('minlength') && apartment.get('phone').touched">
       Minimum of 2 characters
     </div>
+    <div class="error" *ngIf="apartment.get('phone').hasError('phone') && apartment.get('phone').touched">
+      Should be phone
+    </div>
 
-    <button type="submit" [disabled]="apartment.invalid">Sign up</button>
+    <button type="submit" [disabled]="apartment.invalid">Save</button>
   </form>
 
 </section>
