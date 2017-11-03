@@ -8,8 +8,8 @@
   <section class='main' *ngIf='apartments.length > 0'>
     <ul class='apartment-list'>
       <li *ngFor='let apartment of apartments'>
-        <div class='view'>
-          <label>{{apartment.location}}</label>
+        <div class='view' id="{{apartment.id}}">
+          <a [routerLink]="['/apartments', apartment.id]">{{apartment.location}}</a>
           <button class='destroy' (click)='removeApartment(apartment)'></button>
         </div>
       </li>

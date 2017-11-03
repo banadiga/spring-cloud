@@ -34,7 +34,7 @@ describe('ApartmentService', () => {
   describe('#getApartment()', () => {
 
     it('should return an null by default', inject([ApartmentService], (service: ApartmentService) => {
-      expect(service.getApartmentById(1)).toEqual(null);
+      expect(service.getApartmentById('1')).toEqual(null);
     }));
 
   });
@@ -47,8 +47,8 @@ describe('ApartmentService', () => {
       let apartment2 = new Apartment({location: 'location 2'});
       service.addApartment(apartment1);
       service.addApartment(apartment2);
-      expect(service.getApartmentById(1)).toEqual(apartment1);
-      expect(service.getApartmentById(2)).toEqual(apartment2);
+      expect(service.getApartmentById('1')).toEqual(apartment1);
+      expect(service.getApartmentById('2')).toEqual(apartment2);
     }));
 
   });
@@ -61,9 +61,9 @@ describe('ApartmentService', () => {
       service.addApartment(apartment1);
       service.addApartment(apartment2);
       expect(service.getAllApartments()).toEqual([apartment1, apartment2]);
-      service.deleteApartmentById(1);
+      service.deleteApartmentById('1');
       expect(service.getAllApartments()).toEqual([apartment2]);
-      service.deleteApartmentById(2);
+      service.deleteApartmentById('2');
       expect(service.getAllApartments()).toEqual([]);
     }));
 
@@ -73,7 +73,7 @@ describe('ApartmentService', () => {
       service.addApartment(apartment1);
       service.addApartment(apartment2);
       expect(service.getAllApartments()).toEqual([apartment1, apartment2]);
-      service.deleteApartmentById(3);
+      service.deleteApartmentById('3');
       expect(service.getAllApartments()).toEqual([apartment1, apartment2]);
     }));
 
@@ -84,20 +84,20 @@ describe('ApartmentService', () => {
     it('should return apartment with the corresponding id and updated data', inject([ApartmentService], (service: ApartmentService) => {
       let apartment = new Apartment({location: 'location 1'});
       service.addApartment(apartment);
-      service.updateApartmentById(1, {
+      service.updateApartmentById('1', {
         location: 'new location'
       });
-      let updatedApartment = service.getApartmentById(1);
+      let updatedApartment = service.getApartmentById('1');
       expect(updatedApartment.location).toEqual('new location');
     }));
 
     it('should not create if apartment is not found', inject([ApartmentService], (service: ApartmentService) => {
       let apartment = new Apartment({location: 'location 1'});
       service.addApartment(apartment);
-      service.updateApartmentById(2, {
+      service.updateApartmentById('2', {
         location: 'new location'
       });
-      let updatedApartment = service.getApartmentById(2);
+      let updatedApartment = service.getApartmentById('2');
       expect(updatedApartment).toEqual(null);
     }));
 
