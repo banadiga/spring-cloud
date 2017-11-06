@@ -4,20 +4,22 @@ import {DashboardPage} from './dashboard/dashboard.page';
 import {ApartmentListPage} from './apartment/apartment-list.page';
 
 export class AppPage extends BasePage {
-  private dashboard = element(by.css('nav a#dashboard'));
-  private apartments = element(by.css('nav a#apartments'));
+  private topTitle = element(by.css('.navbar-header #dashboard'));
+  private dashboard = element(by.css('a#dashboard'));
+  private apartments = element(by.css('a#apartments'));
+  private copyright = element(by.css('.copyright'));
 
   private constructor() {
     super();
     browser.get('/');
   }
 
-  static create() {
+  static create(): AppPage {
     return new AppPage();
   }
 
-  getParagraphText() {
-    return element(by.css('h1')).getText();
+  getTopText() {
+    return this.topTitle.getText();
   }
 
   getNavDashboard() {
@@ -36,5 +38,9 @@ export class AppPage extends BasePage {
   clickApartments() {
     this.apartments.click();
     return new ApartmentListPage();
+  }
+
+  getCopyrightText() {
+    return this.copyright.getText();
   }
 }

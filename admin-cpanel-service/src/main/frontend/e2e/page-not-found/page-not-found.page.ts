@@ -8,11 +8,11 @@ export class PageNotFoundPage extends BasePage {
     return browser.get('/not-existing-page');
   }
 
-  getBackLink() {
+  getBackLinkText() {
     return this.backLink.getText();
   }
 
-  goBack() {
+  gotoBack() {
     return this.backLink.click();
   }
 }

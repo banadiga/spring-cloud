@@ -74,7 +74,7 @@ describe('Apartment list', () => {
 
     it('should go to `new apartment` page', () => {
       page.clickNewApartment();
-      expect(browser.getCurrentUrl()).toMatch('/new-apartment');
+      expect(browser.getCurrentUrl()).toMatch('/apartments/new');
     });
   });
 });

@@ -8,14 +8,18 @@ describe('frontend App', () => {
   });
 
   it('should display page title', () => {
-    expect(page.getParagraphText()).toEqual('CPanel');
+    expect(page.getTopText()).toEqual('CPanel');
+  });
+
+  it('should display page copyright', () => {
+    expect(page.getCopyrightText()).toEqual('Administrator CPanel :)');
   });
 
   it('should display menu Dashboard', () => {
-    expect(page.getNavDashboard()).toEqual('Dashboard');
+    expect(page.getNavDashboard()).toEqual('CPanel');
   });
 
   it('should display menu Apartments', () => {
-    expect(page.getNavApartments()).toEqual('Show apartments');
+    expect(page.getNavApartments()).toEqual('Apartments');
   });
 });

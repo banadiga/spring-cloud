@@ -28,7 +28,7 @@ describe('DashboardComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`should have as title 'CPanel | Dashboard'`, async(() => {
-    expect(component.title).toEqual('CPanel | Dashboard');
+  it(`should have as title 'Dashboard'`, async(() => {
+    expect(component.title).toEqual('Dashboard');
   }));
 });

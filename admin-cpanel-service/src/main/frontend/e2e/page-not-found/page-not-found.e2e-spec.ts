@@ -19,11 +19,11 @@ describe('PageNotFoundPage', () => {
   describe('back link', () => {
 
     it('should display', () => {
-      expect(page.getBackLink()).toEqual('Back to dashboard');
+      expect(page.getBackLinkText()).toEqual('Back to dashboard');
     });
 
     it('should go back', () => {
-      page.goBack();
+      page.gotoBack();
       expect(browser.getCurrentUrl()).toMatch('/dashboard');
     });
   });

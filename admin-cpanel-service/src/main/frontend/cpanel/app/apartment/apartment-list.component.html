@@ -4,11 +4,11 @@
     <h2>{{title}}</h2>
   </header>
 
-  <a routerLink='/new-apartment' routerLinkActive='active' id='new-apartment'>New apartment</a>
+  <a routerLink='/apartments/new' routerLinkActive='active' id='new-apartment'>New apartment</a>
   <section class='main' *ngIf='apartments.length > 0'>
     <ul class='apartment-list'>
       <li *ngFor='let apartment of apartments'>
-        <div class='view' id="{{apartment.id}}">
+        <div class='view' id="apartment-{{apartment.id}}">
           <a [routerLink]="['/apartments', apartment.id]">{{apartment.location}}</a>
           <button class='destroy' (click)='removeApartment(apartment)'></button>
         </div>

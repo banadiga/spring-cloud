@@ -31,4 +31,8 @@ describe('AppComponent', () => {
   it(`should have as title 'CPanel'`, async(() => {
     expect(component.title).toEqual('CPanel');
   }));
+
+  it(`should have copyright 'Administrator CPanel :)'`, async(() => {
+    expect(component.copyright).toEqual('Administrator CPanel :)');
+  }));
 });

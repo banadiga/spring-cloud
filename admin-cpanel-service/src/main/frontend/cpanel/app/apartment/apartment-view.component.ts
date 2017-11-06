@@ -18,8 +18,6 @@ export class ApartmentViewComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.route.params.subscribe(params => console.error("ngOnInit:" + params));
-
     this.sub = this.route.params.subscribe(params => {
       this.apartment = this.apartmentService.getApartmentById(params['id']);
       if (this.apartment == null) {

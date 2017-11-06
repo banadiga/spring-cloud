@@ -13,7 +13,6 @@ export class ApartmentViewPage extends BasePage {
     return browser.get('/apartments/not-existing-id');
   }
 
-
   getLocationText() {
     return this.location.getText();
   }

@@ -1,8 +1,9 @@
 import {by, element} from 'protractor';
 
 export abstract class BasePage {
+  private title = element(by.css('h2'));
 
   getParagraphText() {
-    return element(by.css('h2')).getText();
+    return this.title.getText();
   }
 }

@@ -10,8 +10,8 @@ const routes: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'apartments', component: ApartmentListComponent},
+  {path: 'apartments/new', component: ApartmentNewComponent},
   {path: 'apartments/:id', component: ApartmentViewComponent},
-  {path: 'new-apartment', component: ApartmentNewComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 

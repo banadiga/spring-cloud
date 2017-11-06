@@ -6,7 +6,7 @@ import {ApartmentViewPage} from './apartment-view.page';
 export class ApartmentListPage extends BasePage {
 
   private newApartmentsLink = element(by.css('app-apartments a#new-apartment'));
-  private apartments = element.all(by.css('app-apartments div.view'));
+  private apartments = element.all(by.css('app-apartments div.view a'));
 
   getNewApartmentText() {
     return this.newApartmentsLink.getText();
