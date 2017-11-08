@@ -158,6 +158,7 @@ describe('New apartment', () => {
         phone: 'My phone',
       }));
 
+      expect(page.getAlertsText()).toContain('New apartment created success!');
       expect(browser.getCurrentUrl()).toMatch('/apartments');
     });
   });

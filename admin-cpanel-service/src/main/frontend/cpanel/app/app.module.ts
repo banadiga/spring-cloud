@@ -13,10 +13,12 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {ApartmentListComponent} from './apartment/apartment-list.component';
 import {ApartmentNewComponent} from './apartment/apartment-new.component';
 import {ApartmentViewComponent} from './apartment/apartment-view.component';
-
+import {AlertComponent} from './alert/alert.component';
+import {AlertService} from "./alert/alert.service";
 
 @NgModule({
   declarations: [
+    AlertComponent,
     AppComponent,
     ApartmentListComponent,
     ApartmentNewComponent,
@@ -31,6 +33,7 @@ import {ApartmentViewComponent} from './apartment/apartment-view.component';
     FormsModule
   ],
   providers: [
+    AlertService,
     ApartmentService
   ],
   bootstrap: [AppComponent]

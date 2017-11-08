@@ -3,6 +3,7 @@ import {ApartmentService} from './apartment.service';
 import {Apartment} from './apartment';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
+import {AlertService} from "../alert/alert.service";
 
 @Component({
   selector: 'app-new-apartment',
@@ -14,7 +15,7 @@ export class ApartmentNewComponent implements OnInit {
 
   apartment: FormGroup;
 
-  constructor(private router: Router, private apartmentService: ApartmentService) {
+  constructor(private router: Router, private apartmentService: ApartmentService, private alertService: AlertService) {
   }
 
   ngOnInit() {
@@ -31,6 +32,7 @@ export class ApartmentNewComponent implements OnInit {
   onSubmit() {
     let newApartment = new Apartment(this.apartment.value);
     console.log('Create new apartment', this.apartmentService.addApartment(newApartment));
+    this.alertService.success('New apartment created success!', true);
     this.router.navigateByUrl('apartments');
   }
 }

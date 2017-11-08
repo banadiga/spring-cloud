@@ -1,6 +1,9 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {AppComponent} from './app.component';
 import {RouterTestingModule} from '@angular/router/testing';
+import {AlertComponent} from './alert/alert.component';
+import {AlertService} from './alert/alert.service';
+import {AlertServiceStub} from '../stub/alert-service.stub';
 
 describe('AppComponent', () => {
 
@@ -12,7 +15,11 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule
       ],
+      providers: [
+        {provide: AlertService, useClass: AlertServiceStub}
+      ],
       declarations: [
+        AlertComponent,
         AppComponent
       ]
     }).compileComponents();

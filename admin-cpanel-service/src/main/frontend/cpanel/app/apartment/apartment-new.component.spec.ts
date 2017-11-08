@@ -4,8 +4,8 @@ import {FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ApartmentServiceStub} from '../../stub/apartment-service.stub';
 import {ApartmentService} from './apartment.service';
 import {ApartmentNewComponent} from './apartment-new.component';
-import {ActivatedRoute} from "@angular/router";
-import {Observable} from "rxjs/Observable";
+import {AlertService} from '../alert/alert.service';
+import {AlertServiceStub} from '../../stub/alert-service.stub';
 
 describe('ApartmentNewComponent', () => {
   let component: ApartmentNewComponent;
@@ -19,7 +19,8 @@ describe('ApartmentNewComponent', () => {
         RouterTestingModule
       ],
       providers: [
-        {provide: ApartmentService, useClass: ApartmentServiceStub}
+        {provide: ApartmentService, useClass: ApartmentServiceStub},
+        {provide: AlertService, useClass: AlertServiceStub}
       ],
       declarations: [
         ApartmentNewComponent
