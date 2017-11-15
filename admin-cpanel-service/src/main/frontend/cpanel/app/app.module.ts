@@ -14,11 +14,14 @@ import {ApartmentListComponent} from './apartment/apartment-list.component';
 import {ApartmentNewComponent} from './apartment/apartment-new.component';
 import {ApartmentViewComponent} from './apartment/apartment-view.component';
 import {AlertComponent} from './alert/alert.component';
-import {AlertService} from "./alert/alert.service";
+import {AlertService} from './alert/alert.service';
+import {ConfirmationService} from './confirmation/confirmation.service';
+import {ConfirmationComponent} from './confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
     AlertComponent,
+    ConfirmationComponent,
     AppComponent,
     ApartmentListComponent,
     ApartmentNewComponent,
@@ -34,7 +37,8 @@ import {AlertService} from "./alert/alert.service";
   ],
   providers: [
     AlertService,
-    ApartmentService
+    ApartmentService,
+    ConfirmationService
   ],
   bootstrap: [AppComponent]
 })

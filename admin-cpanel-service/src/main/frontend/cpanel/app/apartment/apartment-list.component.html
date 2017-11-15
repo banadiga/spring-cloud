@@ -10,7 +10,8 @@
       <li *ngFor='let apartment of apartments'>
         <div class='view' id="apartment-{{apartment.id}}">
           <a [routerLink]="['/apartments', apartment.id]">{{apartment.location}}</a>
-          <button class='destroy' (click)='removeApartment(apartment)'></button>
+          <button class='destroy' data-toggle="modal" data-target="#confirmationModal"
+                  (click)='removeApartment(apartment)'>&times;</button>
         </div>
       </li>
     </ul>

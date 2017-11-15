@@ -28,7 +28,6 @@ describe('ApartmentService', () => {
       service.addApartment(apartment2);
       expect(service.getAllApartments()).toEqual([apartment1, apartment2]);
     }));
-
   });
 
   describe('#getApartment()', () => {
@@ -36,7 +35,6 @@ describe('ApartmentService', () => {
     it('should return an null by default', inject([ApartmentService], (service: ApartmentService) => {
       expect(service.getApartmentById('1')).toEqual(null);
     }));
-
   });
 
 
@@ -50,7 +48,6 @@ describe('ApartmentService', () => {
       expect(service.getApartmentById('1')).toEqual(apartment1);
       expect(service.getApartmentById('2')).toEqual(apartment2);
     }));
-
   });
 
   describe('#deleteApartmentById(id)', () => {
@@ -76,7 +73,6 @@ describe('ApartmentService', () => {
       service.deleteApartmentById('3');
       expect(service.getAllApartments()).toEqual([apartment1, apartment2]);
     }));
-
   });
 
   describe('#updateApartmentById(id, values)', () => {
@@ -100,6 +96,5 @@ describe('ApartmentService', () => {
       let updatedApartment = service.getApartmentById('2');
       expect(updatedApartment).toEqual(null);
     }));
-
   });
 });

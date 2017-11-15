@@ -4,10 +4,10 @@ import {ApartmentServiceStub} from '../../stub/apartment-service.stub';
 import {ApartmentService} from './apartment.service';
 import {ApartmentViewComponent} from './apartment-view.component';
 import {Apartment} from './apartment';
-import {ActivatedRoute} from "@angular/router";
-import "rxjs/add/observable/from";
-import {Observable} from "rxjs/Observable";
-import "rxjs/add/observable/of";
+import {ActivatedRoute} from '@angular/router';
+import 'rxjs/add/observable/from';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
 
 describe('ApartmentViewComponent', () => {
   let component: ApartmentViewComponent;
@@ -38,10 +38,6 @@ describe('ApartmentViewComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should create the app', async(() => {
-    expect(component).toBeTruthy();
-  }));
 
   it(`should have as title 'CPanel | Apartment details'`, async(() => {
     expect(component.title).toEqual('CPanel | Apartment details');

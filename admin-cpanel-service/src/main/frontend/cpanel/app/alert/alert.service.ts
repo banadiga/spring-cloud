@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {NavigationStart, Router} from '@angular/router';
 import {Observable} from 'rxjs';
 import {Subject} from 'rxjs/Subject';
-import {Alert, AlertType} from "./alert";
+import {Alert, AlertType} from './alert';
 
 
 @Injectable()

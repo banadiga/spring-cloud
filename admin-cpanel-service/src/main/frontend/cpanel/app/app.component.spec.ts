@@ -4,6 +4,9 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {AlertComponent} from './alert/alert.component';
 import {AlertService} from './alert/alert.service';
 import {AlertServiceStub} from '../stub/alert-service.stub';
+import {ConfirmationService} from './confirmation/confirmation.service';
+import {ConfirmationServiceStub} from '../stub/confirmation-service.stub';
+import {ConfirmationComponent} from './confirmation/confirmation.component';
 
 describe('AppComponent', () => {
 
@@ -16,10 +19,12 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       providers: [
-        {provide: AlertService, useClass: AlertServiceStub}
+        {provide: AlertService, useClass: AlertServiceStub},
+        {provide: ConfirmationService, useClass: ConfirmationServiceStub}
       ],
       declarations: [
         AlertComponent,
+        ConfirmationComponent,
         AppComponent
       ]
     }).compileComponents();

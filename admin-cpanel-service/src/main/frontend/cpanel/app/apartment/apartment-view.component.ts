@@ -13,8 +13,9 @@ export class ApartmentViewComponent implements OnInit, OnDestroy {
   apartment: Apartment;
   private sub: any;
 
-  constructor(private route: ActivatedRoute, private router: Router, private apartmentService: ApartmentService) {
-    this.route.params.subscribe(params => console.error("constructor:" + params));
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              private apartmentService: ApartmentService) {
   }
 
   ngOnInit() {

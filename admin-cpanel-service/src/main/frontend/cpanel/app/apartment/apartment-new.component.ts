@@ -3,7 +3,7 @@ import {ApartmentService} from './apartment.service';
 import {Apartment} from './apartment';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
-import {AlertService} from "../alert/alert.service";
+import {AlertService} from '../alert/alert.service';
 
 @Component({
   selector: 'app-new-apartment',
@@ -15,7 +15,9 @@ export class ApartmentNewComponent implements OnInit {
 
   apartment: FormGroup;
 
-  constructor(private router: Router, private apartmentService: ApartmentService, private alertService: AlertService) {
+  constructor(private router: Router,
+              private apartmentService: ApartmentService,
+              private alertService: AlertService) {
   }
 
   ngOnInit() {

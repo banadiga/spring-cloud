@@ -29,10 +29,6 @@ describe('AlertComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should create the app', () => {
-    expect(component).toBeTruthy();
-  });
-
   describe('#cssClass', () => {
 
     it(`should return Success`, () => {

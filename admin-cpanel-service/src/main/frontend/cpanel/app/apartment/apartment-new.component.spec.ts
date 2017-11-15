@@ -38,10 +38,6 @@ describe('ApartmentNewComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should create the app', async(() => {
-    expect(component).toBeTruthy();
-  }));
-
   it(`should have as title 'CPanel | New apartment'`, async(() => {
     expect(component.title).toEqual('CPanel | New apartment');
   }));

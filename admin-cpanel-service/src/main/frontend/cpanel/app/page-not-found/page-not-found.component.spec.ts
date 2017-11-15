@@ -50,6 +50,5 @@ describe('PageNotFoundComponent', () => {
       tick(50);
       expect(location.path()).toBe('/dashboard');
     }));
-
   });
 });

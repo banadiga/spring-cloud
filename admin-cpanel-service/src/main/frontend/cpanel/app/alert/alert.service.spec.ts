@@ -1,7 +1,7 @@
 import {async, inject, TestBed} from '@angular/core/testing';
 import {AlertService} from './alert.service';
-import {RouterTestingModule} from "@angular/router/testing";
-import {Alert, AlertType} from "./alert";
+import {RouterTestingModule} from '@angular/router/testing';
+import {Alert, AlertType} from './alert';
 
 describe('AlertService', () => {
 
@@ -21,7 +21,8 @@ describe('AlertService', () => {
   }));
 
   describe('#getAlert()', () => {
-    it('should create and return few apartments', async(inject([AlertService], (service: AlertService) => {
+
+    it('should create and return few alerts', async(inject([AlertService], (service: AlertService) => {
       let alerts = [];
       service.getAlert().subscribe((alert: Alert) => alerts.push(alert));
 
@@ -35,6 +36,7 @@ describe('AlertService', () => {
   });
 
   describe('#error()', () => {
+
     it('should create error alert', async(inject([AlertService], (service: AlertService) => {
       let alerts = [];
       service.getAlert().subscribe((alert: Alert) => alerts.push(alert));
@@ -47,6 +49,7 @@ describe('AlertService', () => {
   });
 
   describe('#success()', () => {
+
     it('should create success alert', async(inject([AlertService], (service: AlertService) => {
       let alerts = [];
       service.getAlert().subscribe((alert: Alert) => alerts.push(alert));
@@ -59,6 +62,7 @@ describe('AlertService', () => {
   });
 
   describe('#info()', () => {
+
     it('should create info alert', async(inject([AlertService], (service: AlertService) => {
       let alerts = [];
       service.getAlert().subscribe((alert: Alert) => alerts.push(alert));
@@ -71,6 +75,7 @@ describe('AlertService', () => {
   });
 
   describe('#warn()', () => {
+
     it('should create warn alert', async(inject([AlertService], (service: AlertService) => {
       let alerts = [];
       service.getAlert().subscribe((alert: Alert) => alerts.push(alert));
