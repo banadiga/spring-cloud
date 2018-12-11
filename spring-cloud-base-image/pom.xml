@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.lohika.jclub.base</groupId>
-  <artifactId>spring-cloud-base-docker-image</artifactId>
+  <artifactId>spring-cloud-base-image</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
