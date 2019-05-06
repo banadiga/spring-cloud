@@ -1,0 +1,25 @@
+<section class='apartment'>
+
+  <header class='header'>
+    <h2>{{title}}</h2>
+  </header>
+
+  <a routerLink='/apartments/new' routerLinkActive='active' id='new-apartment'>New apartment</a>
+  <section class='main' *ngIf='apartments.length > 0'>
+    <ul class='apartment-list'>
+      <li *ngFor='let apartment of apartments'>
+        <div class='view' id="apartment-{{apartment.id}}">
+          <a [routerLink]="['/apartments', apartment.id]">{{apartment.location}}</a>
+          <button class='destroy' data-toggle="modal" data-target="#confirmationModal"
+                  (click)='removeApartment(apartment)'>&times;</button>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <footer class='footer' *ngIf='apartments.length > 0'>
+    <span class='apartment-count'><strong>{{apartments.length}}</strong>
+      {{apartments.length == 1 ? 'item' : 'items'}} left</span>
+  </footer>
+
+</section>

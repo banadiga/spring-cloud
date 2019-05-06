@@ -1,0 +1,99 @@
+<section class='apartment'>
+
+  <header class='header'>
+    <h2>{{title}}</h2>
+  </header>
+
+  <form novalidate (ngSubmit)="onSubmit()" [formGroup]="apartment">
+    <div class="form-group">
+      <label for="location">Location</label>
+      <input placeholder="Your full location" formControlName="location"
+             [class.invalid]="!apartment.get('location').valid"
+             type="text" id="location" class="form-control"/>
+      <div class="error" *ngIf="apartment.get('location').hasError('required') && apartment.get('location').touched">
+        Location is required
+      </div>
+      <div class="error" *ngIf="apartment.get('location').hasError('minlength') && apartment.get('location').touched">
+        Minimum of 2 characters
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="sqft">Sqft</label>
+      <input placeholder="Your full sqft" formControlName="sqft"
+             [class.invalid]="!apartment.get('sqft').valid"
+             type="text" id="sqft" class="form-control"/>
+      <div class="error" *ngIf="apartment.get('sqft').hasError('required') && apartment.get('sqft').touched">
+        Sqft is required
+      </div>
+      <div class="error" *ngIf="apartment.get('sqft').hasError('minlength') && apartment.get('sqft').touched">
+        Minimum of 2 characters
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="price"> Price</label>
+      <input placeholder="Your full price" formControlName="price"
+             [class.invalid]="!apartment.get('price').valid"
+             type="text" id="price" class="form-control"/>
+      <div class="error" *ngIf="apartment.get('price').hasError('required') && apartment.get('price').touched">
+        Price is required
+      </div>
+      <div class="error" *ngIf="apartment.get('price').hasError('minlength') && apartment.get('price').touched">
+        Minimum of 2 characters
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="realtorName">Realtor name</label>
+      <input placeholder="Your full realtor name" formControlName="realtorName"
+             [class.invalid]="!apartment.get('realtorName').valid"
+             type="text" id="realtorName" class="form-control"/>
+      <div class="error"
+           *ngIf="apartment.get('realtorName').hasError('required') && apartment.get('realtorName').touched">
+        Realtor name is required
+      </div>
+      <div class="error"
+           *ngIf="apartment.get('realtorName').hasError('minlength') && apartment.get('realtorName').touched">
+        Minimum of 2 characters
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="mail">Email</label>
+      <input placeholder="Your full email" formControlName="mail" [email]="true"
+             [class.invalid]="!apartment.get('mail').valid"
+             type="email" id="mail" class="form-control"/>
+      <div class="error" *ngIf="apartment.get('mail').hasError('required') && apartment.get('mail').touched">
+        Email is required
+      </div>
+      <div class="error" *ngIf="apartment.get('mail').hasError('minlength') && apartment.get('mail').touched">
+        Minimum of 2 characters
+      </div>
+      <div class="error" *ngIf="apartment.get('mail').hasError('email') && apartment.get('mail').touched">
+        Should be email
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input placeholder="Your full phone" formControlName="phone"
+             [class.invalid]="!apartment.get('phone').valid"
+             type="text" id="phone" class="form-control"/>
+      <div class="error" *ngIf="apartment.get('phone').hasError('required') && apartment.get('phone').touched">
+        Phone is required
+      </div>
+      <div class="error" *ngIf="apartment.get('phone').hasError('minlength') && apartment.get('phone').touched">
+        Minimum of 2 characters
+      </div>
+      <div class="error" *ngIf="apartment.get('phone').hasError('phone') && apartment.get('phone').touched">
+        Should be phone
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="apartment.invalid" class="btn btn-success btn-default">
+      Save
+    </button>
+  </form>
+
+</section>

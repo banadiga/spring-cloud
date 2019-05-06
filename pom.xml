@@ -31,5 +31,6 @@
     <module>spring-cloud-base-image</module>
     <module>spring-cloud-base-service</module>
     <module>spring-cloud-base-client</module>
+    <module>admin-cpanel-service</module>
   </modules>
 </project>

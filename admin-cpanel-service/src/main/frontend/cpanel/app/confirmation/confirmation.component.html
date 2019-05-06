@@ -1,0 +1,20 @@
+<div id="confirmationModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Confirmation</h4>
+      </div>
+
+      <div class="modal-body">
+        <p>{{confirmation?.message}}</p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="close()">Close</button>
+        <a class="btn btn-danger btn-ok" data-dismiss="modal" (click)="confirm()">Confirm</a>
+      </div>
+    </div>
+  </div>
+</div>
